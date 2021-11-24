@@ -12,10 +12,19 @@ class DisplayTest {
     @Test
     public void displayFreeCountTest(){
         ParkingLot parkingLot = new ParkingLot(2,6);
-        System.out.println("testing for number of free slots for car in each floor");
+        System.out.println("testing for number of free slots for test vehicle(car) in each floor");
         Display display = new Display();
-        int result = display.displayFreeCount(parkingLot, "Car");
-        assertEquals(result,3,"free count for car in each vehicle is not 3");
+        int freeCount = display.displayFreeCount(parkingLot, "Car");
+        assertEquals(freeCount,3,"free count for car in each vehicle is not 3");
+    }
+    @DisplayName("displayFreeSlots")
+    @Test
+    public void displayFreeSlotsTest(){
+        ParkingLot parkingLot = new ParkingLot(2,6);
+        System.out.println("testing for displaying available for test vehicle(car) in each floor");
+        Display display = new Display();
+        String freeSlots = display.displayFreeSlots(parkingLot,"Car");
+        assertEquals(freeSlots,"4, 5, 6","free slots for test vehicle(car) is not same");
     }
 
 

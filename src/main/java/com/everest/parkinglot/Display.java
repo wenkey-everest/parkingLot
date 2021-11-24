@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Display {
     private int count = 0;
-
+    private String tempCount;
     public int displayFreeCount(ParkingLot parkingLot, String vehicleType) {
         for (int i = 0; i < parkingLot.getNumberOfFloor(); i++) {
             count = 0;
@@ -25,7 +25,7 @@ public class Display {
         return count;
     }
 
-    public void displayFreeSlots(ParkingLot parkingLot, String vehicleType) {
+    public String displayFreeSlots(ParkingLot parkingLot, String vehicleType) {
         for (int i = 0; i < parkingLot.getNumberOfFloor(); i++) {
             List<Integer> count = new ArrayList<>();
             for (int j = 0; j < parkingLot.getNumberOfSlotsPerFloor(); j++) {
@@ -36,8 +36,10 @@ public class Display {
                     }
                 }
             }
-            System.out.println("Free slots for " + vehicleType + " on Floor " + (i + 1) + " : " + count.toString().replace("[", "").replace("]", ""));
+            tempCount =  count.toString().replace("[", "").replace("]", "");
+            System.out.println("Free slots for " + vehicleType + " on Floor " + (i + 1) + " : " + tempCount);
         }
+        return tempCount;
     }
 
     public void displayOccupiedSlots(ParkingLot parkingLot, String vehicleType) {
