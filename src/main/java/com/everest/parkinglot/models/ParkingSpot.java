@@ -4,9 +4,9 @@ import com.everest.parkinglot.enums.SpotType;
 
 public class ParkingSpot {
     private String status;
-    private SpotType spotType;
+    private final SpotType spotType;
     private Vehicle vehicle;
-    private int spotNumber;
+    private final int spotNumber;
 
     public ParkingSpot(SpotType spotType, int spotNumber, String status) {
         this.spotType = spotType;
