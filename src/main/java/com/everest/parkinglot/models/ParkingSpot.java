@@ -10,8 +10,8 @@ public class ParkingSpot {
 
     public ParkingSpot(SpotType spotType, int spotNumber, String status) {
         this.spotType = spotType;
-        this.status=status;
-        this.spotNumber=spotNumber;
+        this.status = status;
+        this.spotNumber = spotNumber;
     }
 
     public String getStatus() {
@@ -27,16 +27,13 @@ public class ParkingSpot {
     }
 
     public void parkVehicle(Vehicle v) {
-        this.vehicle=v;
-    }
-    public Vehicle unParkVehicle(){
-        Vehicle v= this.vehicle;
-        this.vehicle=null;
-        return v;
+        this.vehicle = v;
     }
 
-    public Vehicle getVehicle() {
-        return vehicle;
+    public Vehicle unParkVehicle() {
+        Vehicle v = this.vehicle;
+        this.vehicle = null;
+        return v;
     }
 
     public int getSpotNumber() {

@@ -1,5 +1,5 @@
 package com.everest.parkinglot.enums;
 
 public enum SpotType {
-     CAR, BIKE, TRUCK;
+    CAR, BIKE, TRUCK;
 }
