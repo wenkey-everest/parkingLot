@@ -1,8 +1,6 @@
 package com.everest.parkinglot;
-
 import com.everest.parkinglot.services.ParkingLot;
 import com.everest.parkinglot.models.ParkingSpot;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +8,7 @@ import java.util.List;
 public class Display {
     private int count = 0;
 
-    public void displayFreeCount(ParkingLot parkingLot, String vehicleType) {
+    public int displayFreeCount(ParkingLot parkingLot, String vehicleType) {
         for (int i = 0; i < parkingLot.getNumberOfFloor(); i++) {
             count = 0;
             for (int j = 0; j < parkingLot.getNumberOfSlotsPerFloor(); j++) {
@@ -24,6 +22,7 @@ public class Display {
             System.out.println("No. of free slots for " + vehicleType + " on Floor " + (i + 1) + " : " + count);
 
         }
+        return count;
     }
 
     public void displayFreeSlots(ParkingLot parkingLot, String vehicleType) {

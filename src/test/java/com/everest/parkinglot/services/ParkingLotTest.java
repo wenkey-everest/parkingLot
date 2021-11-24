@@ -4,10 +4,10 @@ import com.everest.parkinglot.enums.SpotType;
 import com.everest.parkinglot.models.Vehicle;
 import com.everest.parkinglot.views.Car;
 import org.junit.jupiter.api.*;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class ParkingLotTest {
+
     @DisplayName("parkTest")
     @Test
     public void parkTest() {
