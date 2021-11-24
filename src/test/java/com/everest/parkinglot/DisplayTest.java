@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class DisplayTest {
-    @DisplayName("displayFreeCountTest")
+    @DisplayName("displayFreeCount")
     @Test
     public void displayFreeCountTest(){
         ParkingLot parkingLot = new ParkingLot(2,6);
@@ -26,6 +26,14 @@ class DisplayTest {
         String freeSlots = display.displayFreeSlots(parkingLot,"Car");
         assertEquals(freeSlots,"4, 5, 6","free slots for test vehicle(car) is not same");
     }
-
+    @DisplayName("displayOccupiedSlots")
+    @Test
+    public void displayOccupiedSlotsTest(){
+        ParkingLot parkingLot = new ParkingLot(2,6);
+        System.out.println("testing for occupied slots for test vehicle(car) in each floor");
+        Display display = new Display();
+        int occupiedSlots = display.displayOccupiedSlots(parkingLot,"Car");
+        assertEquals(occupiedSlots,0,"occupiedSlots for test vehicle(car) is not 3");
+    }
 
 }

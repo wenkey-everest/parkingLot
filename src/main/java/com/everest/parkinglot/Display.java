@@ -42,7 +42,7 @@ public class Display {
         return tempCount;
     }
 
-    public void displayOccupiedSlots(ParkingLot parkingLot, String vehicleType) {
+    public int displayOccupiedSlots(ParkingLot parkingLot, String vehicleType) {
         for (int i = 0; i < parkingLot.getNumberOfFloor(); i++) {
             count = 0;
             for (int j = 0; j < parkingLot.getNumberOfSlotsPerFloor(); j++) {
@@ -55,5 +55,6 @@ public class Display {
             }
             System.out.println("Occupied slots for " + vehicleType + " on Floor " + (i + 1) + " : " + count);
         }
+        return count;
     }
 }
