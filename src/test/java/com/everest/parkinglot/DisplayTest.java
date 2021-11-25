@@ -1,7 +1,8 @@
 package com.everest.parkinglot;
 
-import com.everest.parkinglot.models.ParkingSpot;
+
 import com.everest.parkinglot.services.ParkingLot;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -33,8 +34,8 @@ class DisplayTest {
     @DisplayName("displayOccupiedSlots")
     @Test
     public void displayOccupiedSlotsTest(){
-        int occupiedSlots = display.displayOccupiedSlots(parkingLot,"Car");
-        assertEquals(occupiedSlots,0,"occupiedSlots for test vehicle(car) is not 3");
+        String occupiedSlots = display.displayOccupiedSlots(parkingLot,"Car");
+        assertEquals(occupiedSlots,"","occupiedSlots for test vehicle(car) is not 3");
     }
 
 }

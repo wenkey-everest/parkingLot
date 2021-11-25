@@ -7,48 +7,48 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Display {
-    private int count = 0;
+    private int count;
     private String tempCount;
 
     public int displayFreeCount(ParkingLot parkingLot, String vehicleType) {
-        displayHandler(parkingLot, vehicleType, "free", "No. of free slots for");
-        return count;
-    }
-
-    public String displayFreeSlots(ParkingLot parkingLot, String vehicleType) {
-        for (int i = 0; i < parkingLot.getNumberOfFloor(); i++) {
-            List<Integer> count = new ArrayList<>();
-            for (int j = 0; j < parkingLot.getNumberOfSlotsPerFloor(); j++) {
-                ParkingSpot spot = parkingLot.getLevels(i).get(j);
-                if (spot.getSpotType().toString().equalsIgnoreCase(vehicleType)) {
-                    if (spot.getStatus().equalsIgnoreCase("free")) {
-                        count.add(spot.getSpotNumber());
-                    }
-                }
-            }
-            tempCount = count.toString().replace("[", "").replace("]", "");
-            System.out.println("Free slots for " + vehicleType + " on Floor " + (i + 1) + " : " + tempCount);
-        }
-        return tempCount;
-    }
-
-    public int displayOccupiedSlots(ParkingLot parkingLot, String vehicleType) {
-        displayHandler(parkingLot, vehicleType, "occupied", "Occupied slots for");
-        return count;
-    }
-
-    public void displayHandler(ParkingLot parkingLot, String vehicleType, String status, String inputString) {
         for (int i = 0; i < parkingLot.getNumberOfFloor(); i++) {
             count = 0;
             for (int j = 0; j < parkingLot.getNumberOfSlotsPerFloor(); j++) {
                 ParkingSpot spot = parkingLot.getLevels(i).get(j);
                 if (spot.getSpotType().toString().equalsIgnoreCase(vehicleType)) {
-                    if (spot.getStatus().equalsIgnoreCase(status)) {
+                    if (spot.getStatus().equalsIgnoreCase("free")) {
                         count++;
                     }
                 }
             }
-            System.out.println(inputString + " " + vehicleType + " on Floor " + (i + 1) + " : " + count);
+            System.out.println("No. of free slots for " + vehicleType + " on Floor " + (i + 1) + " : " + count);
+        }
+        return count;
+    }
+
+    public String displayFreeSlots(ParkingLot parkingLot, String vehicleType) {
+        displayHandler(parkingLot, vehicleType, "free", "Free slots for");
+        return tempCount;
+    }
+
+    public String displayOccupiedSlots(ParkingLot parkingLot, String vehicleType) {
+        displayHandler(parkingLot, vehicleType, "occupied", "Occupied slots for");
+        return tempCount;
+    }
+
+    public void displayHandler(ParkingLot parkingLot, String vehicleType, String status, String inputString) {
+        for (int i = 0; i < parkingLot.getNumberOfFloor(); i++) {
+            List<Integer> count1 = new ArrayList<>();
+            for (int j = 0; j < parkingLot.getNumberOfSlotsPerFloor(); j++) {
+                ParkingSpot spot = parkingLot.getLevels(i).get(j);
+                if (spot.getSpotType().toString().equalsIgnoreCase(vehicleType)) {
+                    if (spot.getStatus().equalsIgnoreCase(status)) {
+                        count1.add(spot.getSpotNumber());
+                    }
+                }
+            }
+            tempCount = count1.toString().replace("[", "").replace("]", "");
+            System.out.println(inputString + " " + vehicleType + " on Floor " + (i + 1) + " : " + tempCount);
         }
     }
 }
