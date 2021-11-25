@@ -31,6 +31,4 @@ class ParkingLotTest {
         System.out.println("vehicle is unParked");
         assertEquals(vehicle, vehicle1, "In unPark the parked and unParked methods are not equal");
     }
-
-
 }

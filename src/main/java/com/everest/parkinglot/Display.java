@@ -11,7 +11,7 @@ public class Display {
     private String tempCount;
 
     public int displayFreeCount(ParkingLot parkingLot, String vehicleType) {
-        displayAdapter(parkingLot, vehicleType, "free", "No. of free slots for");
+        displayHandler(parkingLot, vehicleType, "free", "No. of free slots for");
         return count;
     }
 
@@ -33,11 +33,11 @@ public class Display {
     }
 
     public int displayOccupiedSlots(ParkingLot parkingLot, String vehicleType) {
-        displayAdapter(parkingLot, vehicleType, "occupied", "Occupied slots for");
+        displayHandler(parkingLot, vehicleType, "occupied", "Occupied slots for");
         return count;
     }
 
-    public void displayAdapter(ParkingLot parkingLot, String vehicleType, String status, String inputString) {
+    public void displayHandler(ParkingLot parkingLot, String vehicleType, String status, String inputString) {
         for (int i = 0; i < parkingLot.getNumberOfFloor(); i++) {
             count = 0;
             for (int j = 0; j < parkingLot.getNumberOfSlotsPerFloor(); j++) {
