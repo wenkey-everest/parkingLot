@@ -28,11 +28,13 @@ public class ParkingSpot {
 
     public void parkVehicle(Vehicle v) {
         this.vehicle = v;
+        this.setStatus("occupied");
     }
 
     public Vehicle unParkVehicle() {
         Vehicle v = this.vehicle;
         this.vehicle = null;
+        this.setStatus("free");
         return v;
     }
 

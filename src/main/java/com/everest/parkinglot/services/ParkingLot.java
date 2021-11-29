@@ -32,7 +32,6 @@ public class ParkingLot {
                 if (spot.get(j).getSpotType().equals(requestedSpotType)) {
                     if (spot.get(j).getStatus().equalsIgnoreCase("free")) {
                         spot.get(j).parkVehicle(v);
-                        spot.get(j).setStatus("occupied");
                         System.out.println("Parked vehicle. Ticket ID: PR1234_" + (i + 1) + "_" + spot.get(j).getSpotNumber());
                         return true;
                     }
@@ -49,7 +48,6 @@ public class ParkingLot {
             int spotNumber = Integer.parseInt(ticket[2]) - 1;
             ParkingSpot spot = levels[floor].get(spotNumber);
             if (spot.getStatus().equalsIgnoreCase("occupied")) {
-                spot.setStatus("free");
                 return spot.unParkVehicle();
             }
         } catch (IndexOutOfBoundsException e) {
