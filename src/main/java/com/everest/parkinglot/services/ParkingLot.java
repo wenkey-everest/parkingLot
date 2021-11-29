@@ -1,5 +1,6 @@
 package com.everest.parkinglot.services;
 
+import com.everest.parkinglot.enums.Status;
 import com.everest.parkinglot.models.Level;
 import com.everest.parkinglot.models.ParkingSpot;
 import com.everest.parkinglot.enums.SpotType;
@@ -30,7 +31,7 @@ public class ParkingLot {
             List<ParkingSpot> spot = levels[i];
             for (int j = 0; j < spot.size(); j++) {
                 if (spot.get(j).getSpotType().equals(requestedSpotType)) {
-                    if (spot.get(j).getStatus().equalsIgnoreCase("free")) {
+                    if (spot.get(j).getStatus().equals(Status.FREE)) {
                         spot.get(j).parkVehicle(v);
                         System.out.println("Parked vehicle. Ticket ID: PR1234_" + (i + 1) + "_" + spot.get(j).getSpotNumber());
                         return true;
@@ -47,7 +48,7 @@ public class ParkingLot {
             int floor = Integer.parseInt(ticket[1]) - 1;
             int spotNumber = Integer.parseInt(ticket[2]) - 1;
             ParkingSpot spot = levels[floor].get(spotNumber);
-            if (spot.getStatus().equalsIgnoreCase("occupied")) {
+            if (spot.getStatus().equals(Status.OCCUPIED)) {
                 return spot.unParkVehicle();
             }
         } catch (IndexOutOfBoundsException e) {

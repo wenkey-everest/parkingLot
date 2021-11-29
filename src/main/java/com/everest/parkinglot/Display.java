@@ -1,5 +1,6 @@
 package com.everest.parkinglot;
 
+import com.everest.parkinglot.enums.Status;
 import com.everest.parkinglot.services.ParkingLot;
 import com.everest.parkinglot.models.ParkingSpot;
 
@@ -16,7 +17,7 @@ public class Display {
             for (int j = 0; j < parkingLot.getNumberOfSlotsPerFloor(); j++) {
                 ParkingSpot spot = parkingLot.getLevels(i).get(j);
                 if (spot.getSpotType().toString().equalsIgnoreCase(vehicleType)) {
-                    if (spot.getStatus().equalsIgnoreCase("free")) {
+                    if (spot.getStatus().equals(Status.FREE)) {
                         count++;
                     }
                 }
@@ -27,22 +28,22 @@ public class Display {
     }
 
     public String displayFreeSlots(ParkingLot parkingLot, String vehicleType) {
-        displayHandler(parkingLot, vehicleType, "free", "Free slots for");
+        displayHandler(parkingLot, vehicleType, Status.FREE, "Free slots for");
         return tempCount;
     }
 
     public String displayOccupiedSlots(ParkingLot parkingLot, String vehicleType) {
-        displayHandler(parkingLot, vehicleType, "occupied", "Occupied slots for");
+        displayHandler(parkingLot, vehicleType, Status.OCCUPIED, "Occupied slots for");
         return tempCount;
     }
 
-    public void displayHandler(ParkingLot parkingLot, String vehicleType, String status, String inputString) {
+    public void displayHandler(ParkingLot parkingLot, String vehicleType, Status status, String inputString) {
         for (int i = 0; i < parkingLot.getNumberOfFloor(); i++) {
             List<Integer> count1 = new ArrayList<>();
             for (int j = 0; j < parkingLot.getNumberOfSlotsPerFloor(); j++) {
                 ParkingSpot spot = parkingLot.getLevels(i).get(j);
                 if (spot.getSpotType().toString().equalsIgnoreCase(vehicleType)) {
-                    if (spot.getStatus().equalsIgnoreCase(status)) {
+                    if (spot.getStatus().equals(status)) {
                         count1.add(spot.getSpotNumber());
                     }
                 }

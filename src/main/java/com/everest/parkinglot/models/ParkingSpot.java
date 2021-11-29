@@ -1,24 +1,25 @@
 package com.everest.parkinglot.models;
 
 import com.everest.parkinglot.enums.SpotType;
+import com.everest.parkinglot.enums.Status;
 
 public class ParkingSpot {
-    private String status;
+    private Status status;
     private final SpotType spotType;
     private Vehicle vehicle;
     private final int spotNumber;
 
-    public ParkingSpot(SpotType spotType, int spotNumber, String status) {
+    public ParkingSpot(SpotType spotType, int spotNumber, Status status) {
         this.spotType = spotType;
         this.status = status;
         this.spotNumber = spotNumber;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 
@@ -28,13 +29,13 @@ public class ParkingSpot {
 
     public void parkVehicle(Vehicle v) {
         this.vehicle = v;
-        this.setStatus("occupied");
+        this.setStatus(Status.OCCUPIED);
     }
 
     public Vehicle unParkVehicle() {
         Vehicle v = this.vehicle;
         this.vehicle = null;
-        this.setStatus("free");
+        this.setStatus(Status.FREE);
         return v;
     }
 
