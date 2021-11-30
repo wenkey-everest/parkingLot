@@ -27,5 +27,6 @@
 ```
 - Ctrl + R
 ```
+### Step-4: Use commands in commands.txt file 
 
 
