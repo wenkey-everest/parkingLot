@@ -18,13 +18,13 @@ class DisplayTest {
         System.out.println("testing for number of free slots for test vehicle(car) in each floor");
         display = new Display();
     }
-
-    @DisplayName("displayFreeCount")
-    @Test
-    public void displayFreeCountTest(){
-        int freeCount = display.displayFreeCount(parkingLot, "Car");
-        assertEquals(freeCount,3,"free count for car in each vehicle is not 3");
-    }
+//
+//    @DisplayName("displayFreeCount")
+//    @Test
+//    public void displayFreeCountTest(){
+//        int freeCount = display.displayFreeCount(parkingLot, "Car");
+//        assertEquals(freeCount,3,"free count for car in each vehicle is not 3");
+//    }
     @DisplayName("displayFreeSlots")
     @Test
     public void displayFreeSlotsTest(){
