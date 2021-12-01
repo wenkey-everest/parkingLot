@@ -7,9 +7,8 @@ import java.util.ArrayList;
 
 public class Level {
     private static ArrayList<ParkingSpot> spots;
-    private int totalSlotsPerFloor;
+
     public Level(int totalSlotsPerFloor) {
-        this.totalSlotsPerFloor=totalSlotsPerFloor;
         spots = new ArrayList<>(totalSlotsPerFloor);
         truckSpots(0, 0);
         bikeSpots(1, 2);
