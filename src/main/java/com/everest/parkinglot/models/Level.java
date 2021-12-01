@@ -8,19 +8,31 @@ import java.util.ArrayList;
 public class Level {
     private static ArrayList<ParkingSpot> spots;
     private int totalSlotsPerFloor;
-
     public Level(int totalSlotsPerFloor) {
-        this.totalSlotsPerFloor = totalSlotsPerFloor;
+        this.totalSlotsPerFloor=totalSlotsPerFloor;
         spots = new ArrayList<>(totalSlotsPerFloor);
-        for (int i = 0; i < totalSlotsPerFloor; i++) {
-            if (i == 0) {
-                spots.add(i, new ParkingSpot(SpotType.TRUCK, i + 1, Status.FREE));
-            } else if (i == 1 || i == 2) {
-                spots.add(i, new ParkingSpot(SpotType.BIKE, i + 1, Status.FREE));
-            } else
-                spots.add(i, new ParkingSpot(SpotType.CAR, i + 1, Status.FREE));
-        }
+        truckSpots(0, 0);
+        bikeSpots(1, 2);
+        carSpots(3, totalSlotsPerFloor);
     }
+
+    public void truckSpots(int startingSpot, int endingSpot) {
+        for (int i = startingSpot; i <= endingSpot; i++)
+            spots.add(i, new ParkingSpot(SpotType.TRUCK, i + 1, Status.FREE));
+
+    }
+
+    public void bikeSpots(int startingSpot, int endingSpot) {
+        for (int i = startingSpot; i <= endingSpot; i++)
+            spots.add(i, new ParkingSpot(SpotType.BIKE, i + 1, Status.FREE));
+
+    }
+
+    public void carSpots(int startingSpot, int endingSpot) {
+        for (int i = startingSpot; i <= endingSpot; i++)
+            spots.add(i, new ParkingSpot(SpotType.CAR, i + 1, Status.FREE));
+    }
+
 
     public static ArrayList<ParkingSpot> getSpots() {
         return spots;
