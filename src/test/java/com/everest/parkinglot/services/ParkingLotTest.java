@@ -1,8 +1,9 @@
 package com.everest.parkinglot.services;
 
 import com.everest.parkinglot.enums.SpotType;
-import com.everest.parkinglot.models.Vehicle;
 import com.everest.parkinglot.views.Car;
+import com.everest.parkinglot.views.Car1;
+import com.everest.parkinglot.views.Vehicle;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,7 +14,7 @@ class ParkingLotTest {
     @BeforeEach
     public void parkingClass(){
         parkingLot = new ParkingLot(2,6);
-        vehicle= new Car(SpotType.CAR, "White", "WB-45-HO-9032");
+        vehicle= new Car1(SpotType.CAR, "White", "WB-45-HO-9032");
     }
 
     @DisplayName("parkTest")

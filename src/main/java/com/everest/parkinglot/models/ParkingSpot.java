@@ -1,12 +1,12 @@
 package com.everest.parkinglot.models;
-
+import com.everest.parkinglot.views.Vehicle;
 import com.everest.parkinglot.enums.SpotType;
 import com.everest.parkinglot.enums.Status;
 
 public class ParkingSpot {
     private Status status;
     private final SpotType spotType;
-    private Vehicle vehicle;
+    private  Vehicle vehicle;
     private final int spotNumber;
 
     public ParkingSpot(SpotType spotType, int spotNumber, Status status) {

@@ -4,7 +4,7 @@ import com.everest.parkinglot.enums.Status;
 import com.everest.parkinglot.models.Level;
 import com.everest.parkinglot.models.ParkingSpot;
 import com.everest.parkinglot.enums.SpotType;
-import com.everest.parkinglot.models.Vehicle;
+import com.everest.parkinglot.views.Vehicle;
 
 import java.util.*;
 

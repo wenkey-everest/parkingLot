@@ -1,11 +1,9 @@
 package com.everest.parkinglot;
 
 import com.everest.parkinglot.enums.SpotType;
-import com.everest.parkinglot.models.Vehicle;
+
 import com.everest.parkinglot.services.ParkingLot;
-import com.everest.parkinglot.views.Bike;
-import com.everest.parkinglot.views.Car;
-import com.everest.parkinglot.views.Truck;
+import com.everest.parkinglot.views.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -38,11 +36,11 @@ public class MainClient {
                     break;
                 case "park_vehicle":
                     if (commandText[1].equalsIgnoreCase("car")) {
-                        vehicle = new Car(SpotType.CAR, commandText[3], commandText[2]);
+                        vehicle = new Car1(SpotType.CAR, commandText[3], commandText[2]);
                     } else if (commandText[1].equalsIgnoreCase("bike")) {
-                        vehicle = new Bike(SpotType.BIKE, commandText[3], commandText[2]);
+                        vehicle = new Bike1(SpotType.BIKE, commandText[3], commandText[2]);
                     } else {
-                        vehicle = new Truck(SpotType.TRUCK, commandText[3], commandText[2]);
+                        vehicle = new Truck1(SpotType.TRUCK, commandText[3], commandText[2]);
                     }
                     if (parkingLot.park(vehicle)) {
                     } else {
